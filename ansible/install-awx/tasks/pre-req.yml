@@ -15,7 +15,7 @@
     - nodejs
     - ansible
     update_cache: yes
-    
+
 - name: Install Compose
   pip:
     executable: pip3
