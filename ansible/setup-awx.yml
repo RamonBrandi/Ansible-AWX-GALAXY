@@ -1,6 +1,6 @@
 - hosts: awx
   become: yes
-  user: adminlx
+  user: vagrant
   gather_facts: no
   pre_tasks:
     - name: 'Install o Python'
@@ -9,7 +9,7 @@
       raw: 'apt-get -y update'
 - hosts: awx
   become: yes
-  user: adminlx
+  user: vagrant
   roles:
   - { role: install-awx, tags: ["install_awx"]}
     
