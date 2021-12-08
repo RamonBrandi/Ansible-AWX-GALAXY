@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   machines.each do |name, conf|
     config.vm.define "#{name}" do |machine|
       machine.vm.box = "#{conf["image"]}"
+      machine.ssh.username = "vagrant"
       machine.vm.hostname = "#{name}.ansible-example"
       machine.vm.network "private_network", ip: "10.20.20.#{conf["ip"]}"
       machine.vm.provider "virtualbox" do |vb|
@@ -19,6 +20,7 @@ Vagrant.configure("2") do |config|
         vb.cpus = conf["cpu"]
         vb.customize ["modifyvm", :id, "--groups", "/ANSIBLE-EXP"]
       end
+      machine.vm.provision "shell", path: "provision.sh"
     end
   end
 end
