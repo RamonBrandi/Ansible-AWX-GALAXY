@@ -15,12 +15,7 @@
     - nodejs
     - ansible
     update_cache: yes
-
-- name: Install "NPM" node.js package globally.
-  npm:
-    name: npm
-    global: yes
-
+    
 - name: Install Compose
   pip:
     executable: pip3
