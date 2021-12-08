@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  gather_facts: yes
+  tasks:
+  - name: Creating an empty file
+    file:
+      path: "/tmp/testeawx"
+      state: touch
