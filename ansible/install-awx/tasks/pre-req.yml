@@ -29,6 +29,11 @@
     force: yes
 - name: Create file
   file:
+    path: /tmp/awx/installer
+    state: touch
+
+- name: Create file
+  file:
     path: /tmp/awx/installer/inventoryng
     state: touch
 
